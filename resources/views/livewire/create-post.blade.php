@@ -5,4 +5,7 @@
     {{-- <h1>{{ $this->userName }}</h1> --}}
     <button style="border: 1px solid #ccc;padding:10px" wire:click="increament({{ $counter }})">+</button>
     <button style="border: 1px solid #ccc;padding:10px" wire:click="decreament">-</button>
+    <button type="button" wire:click="$refresh">
+        refresh post
+    </button>
 </div>
