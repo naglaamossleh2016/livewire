@@ -906,11 +906,11 @@
 
 <body>
     welcome page
-    @livewire('create-post', ['fullName' => 'Naglaamossleh'])
-    @livewire('first-event')
+    {{-- @livewire('create-post', ['fullName' => 'Naglaamossleh'])
+    @livewire('first-event') --}}
     {{-- @livewire('second-event')
     @livewire('third-event') --}}
-
+    @livewire('parent-component')
 
     @livewireScripts
 
