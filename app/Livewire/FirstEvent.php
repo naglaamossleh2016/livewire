@@ -9,12 +9,12 @@ class FirstEvent extends Component
 {
     public function runEvent(){
         // $this->dispatch('fireEvent')->to(ThirdEvent::class);
-        $this->dispatch('fireEvent')->self();
+        $this->dispatch('fireEvent');
     }
-     #[On('fireEvent')]
-    public function doEvent(){
-        dd('i am lestning now do you hear me self Event');
-    }
+    //  #[On('fireEvent')]
+    // public function doEvent(){
+    //     dd('i am lestning now do you hear me self Event');
+    // }
     public function render()
     {
         return view('livewire.first-event');

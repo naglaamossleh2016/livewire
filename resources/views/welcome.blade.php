@@ -908,11 +908,21 @@
     welcome page
     @livewire('create-post', ['fullName' => 'Naglaamossleh'])
     @livewire('first-event')
-    @livewire('second-event')
-    @livewire('third-event')
+    {{-- @livewire('second-event')
+    @livewire('third-event') --}}
 
 
     @livewireScripts
+
+    <script>
+        document.addEventListener('livewire:init', () => {
+            Livewire.on('fireEvent', (event) => {
+                //
+                alert('from javascript')
+            });
+        });
+    </script>
+
 </body>
 
 </html>
