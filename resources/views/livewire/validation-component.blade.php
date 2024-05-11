@@ -1,7 +1,8 @@
 <form class="w-50 m-auto mt-4" wire:submit="submit">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" wire:model="email">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            wire:model.live="email">
         @error('email')
             <span class="text-danger">{{ $message }} </span>
         @enderror
@@ -9,7 +10,7 @@
     </div>
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" wire:model="password">
+        <input type="password" class="form-control" id="exampleInputPassword1" wire:model.live="password">
         @error('password')
             <span class="text-danger">{{ $message }}</span>
         @enderror
