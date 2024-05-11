@@ -914,7 +914,9 @@
     {{-- @livewire('second-event')
     @livewire('third-event') --}}
     {{-- @livewire('parent-component') --}}
-    @livewire('validation-component')
+    {{-- @livewire('validation-component') --}}
+
+    @livewire('file-upload')
 
     @livewireScripts
 
