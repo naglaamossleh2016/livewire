@@ -14,22 +14,41 @@ class ValidationComponent extends Component
        $this->validate([
         'email' => 'required|email',]);
     }
-      protected $rules=[
+    //   protected $rules=[
+    //     'email' => 'required|email',
+    //     'password' => 'required|min:8', // Assuming a minimum password length of 8 characters
+    //     'remember' => 'nullable',
+    // ];
+    
+    // public function updated($password){
+    //    $this->validateOnly($password);
+    // }
+     public function rules()
+    {
+        return [
         'email' => 'required|email',
         'password' => 'required|min:8', // Assuming a minimum password length of 8 characters
         'remember' => 'nullable',
     ];
-    
-    public function updated($password){
-       $this->validateOnly($password);
     }
+    public function messages(){
+        return [
+            'email.required'=>'هذا الحقل مطلوب',
+            'password.required'=>'كلمة المرور مطلوبة',
+            'password.min'=>' كلمة المرور لابد أن تكون على الاقل 8 أحرف '
+        ];
+
+    }
+    public function attributes(){
+        return [
+        'email'=>'البريد الإلكتروني',
+        'password'=>'كلمة المرور'
+        ];
+    }
+    
 
     public function submit(){
-         $this->validate([
-        'email' => 'required|email',
-        'password' => 'required|min:8', // Assuming a minimum password length of 8 characters
-        'remember' => 'nullable',
-    ]);
+         $this->validate($this->rules(),$this->messages(),$this->attributes());
         dd('from submit ');
     }
     public function render()
