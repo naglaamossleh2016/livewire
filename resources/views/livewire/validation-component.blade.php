@@ -1,4 +1,9 @@
 <form class="w-50 m-auto mt-4" wire:submit="submit">
+    @error('custom-error')
+        <span class="text-info">
+            {{ $message }}
+        </span>
+    @enderror
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" wire:model="email">

@@ -49,7 +49,7 @@ class ValidationComponent extends Component
 
     public function submit(){
          $this->validate($this->rules(),$this->messages(),$this->attributes());
-        dd('from submit ');
+        $this->addError('custom-error','This is custom error');
     }
     public function render()
     {
