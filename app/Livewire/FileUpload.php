@@ -8,14 +8,18 @@ use Livewire\WithFileUploads;
 class FileUpload extends Component
 {
     use WithFileUploads;
-    public $photo;
+    public $photos=[];
     public function rules()  {
-        return ['photo'=>'image'];
+        return ['photos.*'=>'image'];
     }
     public function submit(){
         $this->validate();
-        $this->photo->store('local');
+        foreach($this->photos as $photo){
+
+            $photo->store('local');
+        }
     }
+    
     public function render()
     {
         return view('livewire.file-upload');

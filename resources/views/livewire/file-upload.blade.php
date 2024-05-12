@@ -2,15 +2,15 @@
 
     <div class="mb-3">
         <label for="photoUpload" class="form-label">Upload Photo</label>
-        <input type="file" class="form-control" id="photoUpload" wire:model="photo">
-        @error('photo')
+        <input type="file" class="form-control" id="photoUpload" wire:model="photos" multiple>
+        @error('photos.*')
             <span class="text-danger">{{ $message }}</span>
         @enderror
     </div>
     <div class="mb-3">
-        @if ($photo)
+        {{-- @if ($photo)
             <img src="{{ $photo->temporaryUrl() }}">
-        @endif
+        @endif --}}
 
     </div>
 
