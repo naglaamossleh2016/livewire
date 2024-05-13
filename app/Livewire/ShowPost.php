@@ -10,7 +10,11 @@ class ShowPost extends Component
     {
         return <<<'HTML'
         <div>
+<<<<<<< HEAD
+            Hello from inline livewire
+=======
             Hello from inline component
+>>>>>>> 7832588c032bd5456cf3b34a1469eadaabdc609f
         </div>
         HTML;
     }

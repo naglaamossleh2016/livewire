@@ -9,6 +9,6 @@ class SearchEngine extends Component
     public $search;
     public function render()
     {
-        return view('livewire.search-engine',['posts'=>Post::where('name','like','%'.$this->search.'%')->get()]);
+        return view('livewire.search-engine',['posts'=>Post::where('name','like','%'.$this->search.'%')->get(),]);
     }
 }
